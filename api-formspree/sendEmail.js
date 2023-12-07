@@ -17,7 +17,7 @@ async function handleSubmit(event) {
 
     if (response.ok) {
       form.reset();
-      successMessage.style.display = "block"; // Mostrar el mensaje de éxito
+      successMessage.style.display = "block";
     } else {
       var responseData = await response.json();
       if (Object.hasOwnProperty.call(responseData, 'errors')) {

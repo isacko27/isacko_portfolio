@@ -1,10 +1,3 @@
-/**
-*	Myour - Personal Portfolio Template (HTML)
-*	Version: 1.0
-*	Author: beshleyua
-*	Author URL: http://themeforest.net/user/beshleyua
-*	Copyright © Myour by beshleyua. All Rights Reserved.
-**/
 
 ( function( $ ) {
 	'use strict';
@@ -273,6 +266,9 @@
 	}
 
 	/*
+
+
+	/*
 		Initialize portfolio items
 	*/
 	var $container = $('.section.works .box-items');
@@ -455,6 +451,9 @@
 			email: {
 				required: true,
 				email: true
+			},
+			phone: {
+				required: true
 			}
 		},
 		success: 'valid',
@@ -479,3 +478,53 @@
 	});
 	
 } )( jQuery );
+
+document.querySelectorAll('a.no-url-change').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const sectionID = this.getAttribute('href');
+        const section = document.querySelector(sectionID);
+
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+const confirmationLinks = document.querySelectorAll('.confirmation-link');
+
+confirmationLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const modal = document.querySelector('.modal');
+    modal.classList.add('show'); // Agregar clase 'show' para mostrar el modal
+
+    document.querySelector('.confirm').addEventListener('click', function() {
+      window.open(link.href, '_blank');
+      modal.classList.remove('show'); // Quitar la clase 'show' para esconder el modal
+    });
+
+    document.querySelector('.cancel').addEventListener('click', function() {
+      modal.classList.remove('show'); // Quitar la clase 'show' para esconder el modal
+    });
+  });
+});
+
+
+// Scroll Button Scroll
+
+$('.scroll-btn').on('click', function(event) {
+    event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+
+    var target = $(this).attr('href'); // Obtiene el valor del atributo href del enlace clicado
+    var offset = $(target).offset().top;
+    var scrollTopPosition = offset - 50; // Cambia este valor para ajustar la posición
+
+    $('html, body').animate({
+        scrollTop: scrollTopPosition
+    }, 800);
+});

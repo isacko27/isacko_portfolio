@@ -764,7 +764,7 @@
 
 .section.started .started-content {
 	padding-left: 8%;
-	max-width: 500px;
+	max-width: 700px;
 }
 
 .section.started .started-content .h-subtitles {
@@ -3085,3 +3085,45 @@ iframe, object {
 	font-size: 0;
 	line-height: 0;
 }
+
+/* Add Css */
+
+.contact-info {
+	margin-bottom: 40px;
+}
+
+/*  */
+
+
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2f3033;
+	padding: 20px;
+	border: 0.5px solid #585d65;
+	border-radius: 10px;
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease; /* Agrega la transición */
+	min-width: 20em;
+  }
+  
+  .modal.show {
+	opacity: 1;
+	visibility: visible;
+  }
+  
+  .modal-content {
+	text-align: center;
+	font-weight: bold;
+  }
+
+  
+@media screen and (max-width: 440px) {
+	.scroll-btn {
+	  margin-bottom: 1em;
+	}
+  }
