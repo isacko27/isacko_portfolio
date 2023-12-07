@@ -802,6 +802,7 @@
 	width: 64px;
 	font-size: 18px;
 	text-align: center;
+
 }
 
 .section.started .mouse-btn .icon {
@@ -3119,6 +3120,44 @@ iframe, object {
   .modal-content {
 	text-align: center;
 	font-weight: bold;
+  }
+
+  .pdf-viewer-modal {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .pdf-viewer-content {
+	background-color: #fefefe;
+	margin: 10% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+  }
+  
+  .pdf-viewer-close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .pdf-viewer-close:hover,
+  .pdf-viewer-close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+  .down-animation {
+	animation: mouse-anim 3s ease-out 0s infinite;
   }
 
   

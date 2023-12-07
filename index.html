@@ -83,7 +83,7 @@
 			<a href="#" class="menu-btn"><span></span></a>
 				
 			<!-- download cv button -->
-			<a href="#" class="btn download-cv-btn">
+			<a id="openPdfModal" class="btn download-cv-btn">
 				<span class="animated-button"><span><em>D</em><em>o</em><em>w</em><em>n</em><em>l</em><em>o</em><em>a</em><em>d</em><em> </em><em>C</em><em>V</em></span></span>
 				<i class="icon fas fa-download" aria-hidden="true"></i>
 			</a>
@@ -1463,6 +1463,14 @@
 					
 				</div>
 			</div>
+
+<!-- El modal del visualizador de PDF -->
+<div id="pdfModal" class="pdf-viewer-modal">
+  <div class="pdf-viewer-content">
+    <span class="pdf-viewer-close">&times;</span>
+    <iframe id="pdfViewer" width="100%" height="500px"></iframe>
+  </div>
+</div>
 		<!-- Modal de confirmacion-->
 		<div class="modal">
 		<div class="modal-content">

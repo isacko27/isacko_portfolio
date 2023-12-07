@@ -528,3 +528,23 @@ $('.scroll-btn').on('click', function(event) {
         scrollTop: scrollTopPosition
     }, 800);
 });
+
+// Pdf Modal open
+
+// Obtener referencias a elementos DOM
+const openModalBtn = document.getElementById('openPdfModal');
+const modal = document.getElementById('pdfModal');
+const closeModalSpan = document.getElementsByClassName('pdf-viewer-close')[0];
+const pdfViewer = document.getElementById('pdfViewer');
+
+// Evento para abrir el modal del visor de PDF
+openModalBtn.addEventListener('click', function() {
+  modal.style.display = 'block';
+  // Cargar el PDF en el visor
+  pdfViewer.src = './CV/isaac-cv.pdf';
+});
+
+// Evento para cerrar el modal del visor de PDF
+closeModalSpan.addEventListener('click', function() {
+  modal.style.display = 'none';
+});
