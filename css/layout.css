@@ -2530,6 +2530,7 @@
 
 .section.contacts .alert-success p {
 	font-size: 14px;
+	font-weight: bold;
 	color: #FFF;
 }
 

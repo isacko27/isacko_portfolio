@@ -1313,7 +1313,7 @@
 										<span class="info">
 											<span class="centrize full-width">
 												<span class="vertical-center">
-													<i class="icon fab fa-tiktok" aria-hidden="true"></i>
+													<i class=" icon fab fa-tiktok" aria-hidden="true"></i>
 												</span>
 											</span>
 										</span>
@@ -1326,7 +1326,7 @@
 							</div>
 							<div class="box-item">
 								<div class="image">
-									<a href="https://www.linkedin.com/in/isaac-hervoso-70435b293/" class="has-popup-link" target="_blank">
+									<a href="https://www.linkedin.com/in/isaac-hervoso-70435b293/" class="has-popup-lin  k" target="_blank">
 										<img src="images/works/Socials/Linkedini.png" alt="">
 										<span class="info">
 											<span class="centrize full-width">
@@ -1402,10 +1402,15 @@
 
 					<!-- contact form -->
 					<div class="contact-form">
-						<form id="cform" method="post" novalidate="novalidate">
+						<form id="cform" action="https://formspree.io/f/xnqkepjn"
+						method="POST" novalidate="novalidate">
 							<div class="group-val">
 								<div class="label">Full name <strong>*</strong></div>
    								<input type="text" name="name" placeholder="ej.: Genoveva Lian Hullt">
+							</div>
+							<div class="group-val">
+								<div class="label">Phone number <strong>*</strong></div>
+   								<input type="text" name="phone" placeholder="ej.: +506 7432-4223">
 							</div>
 							<div class="group-val">
 								<div class="label">Email address <strong>*</strong></div>
@@ -1426,6 +1431,7 @@
 							<p>Thanks, your message is sent successfully.</p>
 						</div>
 					</div>
+
 
 					<!-- contact info -->
 					<div class="contact-info">
@@ -1474,6 +1480,7 @@
 	</div>
 
 	<!-- Scripts -->
+	<script src="api-formspree/sendEmail.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/velocity.min.js"></script>
 	<script src="js/jquery.validate.js"></script>
