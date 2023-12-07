@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Redirige las solicitudes de archivos HTML a URLs sin la extensión .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

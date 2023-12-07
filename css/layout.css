@@ -3132,14 +3132,16 @@ iframe, object {
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 5px;
   }
   
   .pdf-viewer-content {
-	background-color: #fefefe;
+	background-color: #2f3033;
 	margin: 10% auto;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 80%;
+	border-radius: 5px;
   }
   
   .pdf-viewer-close {
@@ -3160,6 +3162,20 @@ iframe, object {
 	animation: mouse-anim 3s ease-out 0s infinite;
   }
 
+  .blink {
+	animation: blinkBorder 1s infinite; /* Animación de parpadeo */
+  }
+
+  @keyframes blinkBorder {
+	0%, 100% {
+	  border-color: rgba(255, 255, 255, 0.7); /* Color inicial */
+	  border-width: 1px;
+	}
+	50% {
+	  border-color: #68e0cf; /* Color intermedio */
+	  border-width: 2.5px;
+	}
+  }
   
 @media screen and (max-width: 440px) {
 	.scroll-btn {

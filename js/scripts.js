@@ -495,24 +495,43 @@ document.querySelectorAll('a.no-url-change').forEach(anchor => {
 });
 
 const confirmationLinks = document.querySelectorAll('.confirmation-link');
+const myModal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal-content');
 
 confirmationLinks.forEach(link => {
-  link.addEventListener('click', function(event) {
+  link.addEventListener('click', event => {
     event.preventDefault();
+    const urlParts = link.href.split('//')[1].split('/');
+    const urlToShow = urlParts[0] + '/' + urlParts[1];
 
-    const modal = document.querySelector('.modal');
-    modal.classList.add('show'); // Agregar clase 'show' para mostrar el modal
+    modalContent.innerHTML = `
+      <p>Confirm open link?<br>${urlToShow}</p>
+      <button>Yes</button>
+      <button>No</button>
+    `;
 
-    document.querySelector('.confirm').addEventListener('click', function() {
+    const [confirmButton, cancelButton] = modalContent.querySelectorAll('button');
+
+    confirmButton.addEventListener('click', () => {
       window.open(link.href, '_blank');
-      modal.classList.remove('show'); // Quitar la clase 'show' para esconder el modal
+      myModal.classList.remove('show');
     });
 
-    document.querySelector('.cancel').addEventListener('click', function() {
-      modal.classList.remove('show'); // Quitar la clase 'show' para esconder el modal
+    cancelButton.addEventListener('click', () => {
+      myModal.classList.remove('show');
     });
+
+    myModal.classList.add('show');
   });
 });
+
+
+
+
+
+
+
+
 
 
 // Scroll Button Scroll
@@ -547,4 +566,40 @@ openModalBtn.addEventListener('click', function() {
 // Evento para cerrar el modal del visor de PDF
 closeModalSpan.addEventListener('click', function() {
   modal.style.display = 'none';
+});
+
+
+// Animacion para boton intermitente en celular
+
+// Obtener el botón del menú
+const menuButton = document.getElementById('menuButton');
+
+// Función para manejar el parpadeo del borde
+function blinkBorder() {
+  menuButton.classList.add('blink'); // Agregar la clase para el parpadeo
+}
+
+// Iniciar el parpadeo después de 3 segundos si el botón no ha sido clicado aún
+const timer = setTimeout(function() {
+  if (!menuButton.classList.contains('clicked') && isButtonVisible(menuButton)) {
+    blinkBorder();
+  }
+}, 3000);
+
+// Función para verificar si el botón está visible en la pantalla
+function isButtonVisible(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Eliminar la clase si el botón es clicado antes de que pasen los 3 segundos
+menuButton.addEventListener('click', function() {
+  clearTimeout(timer); // Detener el temporizador
+  menuButton.classList.add('clicked');
+  menuButton.classList.remove('blink');
 });
